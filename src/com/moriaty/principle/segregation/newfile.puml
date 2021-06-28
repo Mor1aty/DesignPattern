@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Interface1 {
+    void operation1()
+    void operation2()
+    void operation3()
+    void operation4()
+    void operation5()
+}
+
+class A {
+}
+note left of A: 1. A 通过 Interface1 使用 B\n2. 但是 A 只会使用接口的 1，2，3 方法
+class B {
+}
+
+class C {
+}
+note bottom of C: 1. C 通过 Interface1 使用 D\n2. 但是 A 只会使用接口的 1，4，5 方法
+class D {
+}
+
+Interface1 <|.. B
+Interface1 <|.. D
+
+Interface1 <.. A
+Interface1 <.. C
+
+
+
+@enduml
