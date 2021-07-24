@@ -1,0 +1,27 @@
+@startuml
+
+class Mouse {}
+
+class Monitor {}
+
+class Computer {
+    mouse: Mouse = new Mouse
+    monitor: Monitor = new Monitor
+}
+
+Mouse --* Computer
+Monitor --* Computer
+
+class Person {
+    idCard: IdCard
+    head: Head = new Head
+}
+
+class Head {}
+
+class IdCard {}
+
+Head --* Person
+IdCard --o Person
+
+@enduml

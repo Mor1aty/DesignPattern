@@ -1,0 +1,53 @@
+@startuml
+
+class A {
+    operation1(): void
+    operation2(): void
+    operation3(): void
+}
+note right of A: 如果我们只是让 B 类去使用 A 类方法, \n使用继承就会让 B 和 A 的耦合性增强
+
+class B {
+}
+
+A <|-- B: 继承
+
+class A1 {
+    operation1(): void
+    operation2(): void
+    operation3(): void
+}
+
+class B1 {
+    operation1(A1 a1): void
+}
+
+B1 ..> A1 : 依赖
+
+
+class A2 {
+    operation1(): void
+    operation2(): void
+    operation3(): void
+}
+
+class B2 {
+    a2: A2
+    setA(A a): void
+}
+
+B2 o-- A2: 聚合
+
+class A3 {
+    operation1(): void
+    operation2(): void
+    operation3(): void
+}
+
+class B3 {
+    A3 a3 = new A3();
+}
+
+A3 *-- B3: 组合
+
+@enduml

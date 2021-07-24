@@ -1,0 +1,19 @@
+@startuml
+
+class Person {
+    id: Integer
+    name: String
+
+    setName(name: String): void
+    getName(): String
+}
+
+class Person2 {
+    id: Integer
+    name: String
+
+    setName(name: String): void
+    getName(): String
+}
+
+@enduml

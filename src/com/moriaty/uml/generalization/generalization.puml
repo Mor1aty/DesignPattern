@@ -1,0 +1,11 @@
+@startuml
+class DaoSupport {
+    save(entity: Object): void
+    delete(id: Object): void
+}
+
+class PersonServiceBean {
+}
+
+PersonServiceBean --|> DaoSupport
+@enduml
